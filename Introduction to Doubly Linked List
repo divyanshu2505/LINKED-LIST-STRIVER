@@ -1,0 +1,22 @@
+class Solution:
+    def constructDLL(self, arr):
+        # Code here
+        if not arr:
+            return None
+        
+        head = None
+        tail = None
+        
+        for value in arr:
+            new_node = Node(value)
+            
+            if head is None:
+                head = new_node
+                tail = new_node
+                
+            else:
+                tail.next = new_node
+                new_node_prev = tail
+                tail = new_node
+                
+        return head
