@@ -1,0 +1,22 @@
+class Solution:
+    #Function to insert a new node at given position in doubly linked list.
+    def addNode(self, head, p, x):
+        # Code here
+        temp=Node(data)
+        count=0
+        curr= head
+        while curr.next !=None:
+            if count==p:
+                temp.prev= curr
+                temp.next= curr.next
+                curr.next.prev= temp
+                curr.next = temp
+                return head
+            count+=1
+            curr=curr.next
+        if(curr.next==None) and (count==p):
+            curr.next= temp
+            temp.prev =curr
+            return head
+            
+
